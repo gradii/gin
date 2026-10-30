@@ -1,0 +1,50 @@
+# The current checkout is tested together with the framework at its configured
+# ref. See .cnb/README.md for GRADII_FRAMEWORK_URL / GRADII_FRAMEWORK_REF.
+.go-cache: &go-cache
+  - master:/go/pkg/mod:copy-on-write
+  - master:/root/.cache/go-build:copy-on-write
+
+.go-cache-read-only: &go-cache-read-only
+  - master:/go/pkg/mod:copy-on-write-read-only
+  - master:/root/.cache/go-build:copy-on-write-read-only
+
+.go: &go
+  runner:
+    tags: cnb:arch:amd64
+  env:
+    GOPROXY: https://mirrors.cloud.tencent.com/go/,https://goproxy.cn,https://goproxy.io,direct
+
+.test: &test
+  <<: *go
+  imports:
+    - https://cnb.cool/gradii/secret/-/blob/main/ci/framework-refs.yml
+  stages:
+    - name: checkout the framework and run all root tests
+      timeout: 30m
+      script: bash .cnb/ci.sh unit
+
+main:
+  push:
+    - name: Test (go 1.26)
+      <<: *test
+      docker:
+        image: golang:1.26
+        volumes: *go-cache
+    - name: Test (go 1.27)
+      <<: *test
+      docker:
+        image: golang:1.27
+        volumes: *go-cache
+
+"**":
+  pull_request:
+    - name: Test (go 1.26)
+      <<: *test
+      docker:
+        image: golang:1.26
+        volumes: *go-cache-read-only
+    - name: Test (go 1.27)
+      <<: *test
+      docker:
+        image: golang:1.27
+        volumes: *go-cache-read-only

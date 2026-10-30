@@ -1,10 +1,32 @@
+# The same jobs live in .cnb/test.yml: both call .cnb/ci.sh, which builds a
+# temporary workspace out of this checkout and the framework, and tests both
+# root modules, so a change here is checked against the framework's main rather
+# than against the released tag this module pins. A route driver has no
+# integration suite of its own to run.
+
 name: Test
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
+permissions:
+  contents: read
+env:
+  # The framework is cloned from GitHub here; CNB uses its own host.
+  # The entry for this repository is ignored: ci.sh always tests the checkout the
+  # runner supplied, so a pull request is tested as it is.
+  GRADII_FRAMEWORK_URL: https://github.com/gradii/framework
+  GRADII_FRAMEWORK_REF: main
 jobs:
-  test:
-    uses: goravel/.github/.github/workflows/test.yml@master
-    secrets: inherit
+  unit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+          cache: true
+      - name: Test both root modules
+        run: bash .cnb/ci.sh unit
