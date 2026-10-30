@@ -3,7 +3,7 @@ package gin
 import (
 	"strings"
 
-	"github.com/goravel/framework/contracts/http"
+	"github.com/gradii/framework/contracts/http"
 	"github.com/rs/cors"
 )
 

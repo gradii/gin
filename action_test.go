@@ -6,7 +6,7 @@ import (
 	"testing"
 
 	"github.com/gin-gonic/gin"
-	contractshttp "github.com/goravel/framework/contracts/http"
+	contractshttp "github.com/gradii/framework/contracts/http"
 	"github.com/stretchr/testify/assert"
 )
 

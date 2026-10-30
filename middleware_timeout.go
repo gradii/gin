@@ -6,7 +6,7 @@ import (
 
 	gintimeout "github.com/gin-contrib/timeout"
 	"github.com/gin-gonic/gin"
-	contractshttp "github.com/goravel/framework/contracts/http"
+	contractshttp "github.com/gradii/framework/contracts/http"
 )
 
 type TimeoutMiddleware struct {

@@ -14,15 +14,15 @@ import (
 	"testing"
 
 	"github.com/gin-gonic/gin"
-	contractshttp "github.com/goravel/framework/contracts/http"
-	frameworkfilesystem "github.com/goravel/framework/filesystem"
-	foundationjson "github.com/goravel/framework/foundation/json"
-	mocksconfig "github.com/goravel/framework/mocks/config"
-	mocksfilesystem "github.com/goravel/framework/mocks/filesystem"
-	mockslog "github.com/goravel/framework/mocks/log"
-	"github.com/goravel/framework/session"
-	"github.com/goravel/framework/support/json"
-	"github.com/goravel/framework/validation"
+	contractshttp "github.com/gradii/framework/contracts/http"
+	frameworkfilesystem "github.com/gradii/framework/filesystem"
+	foundationjson "github.com/gradii/framework/foundation/json"
+	mocksconfig "github.com/gradii/framework/mocks/config"
+	mocksfilesystem "github.com/gradii/framework/mocks/filesystem"
+	mockslog "github.com/gradii/framework/mocks/log"
+	"github.com/gradii/framework/session"
+	"github.com/gradii/framework/support/json"
+	"github.com/gradii/framework/validation"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/suite"
@@ -785,35 +785,35 @@ func (s *ContextRequestSuite) TestInfo() {
 	s.Require().Nil(err)
 
 	code, body, _, _ := s.request(req)
-	s.Equal(`{"info":{"handler":"github.com/goravel/gin.(*ContextRequestSuite).TestInfo.func1","method":"GET","name":"test-info-get","path":"/info/{id}"}}`, body)
+	s.Equal(`{"info":{"handler":"github.com/gradii/gin.(*ContextRequestSuite).TestInfo.func1","method":"GET","name":"test-info-get","path":"/info/{id}"}}`, body)
 	s.Equal(http.StatusOK, code)
 
 	req, err = http.NewRequest("HEAD", "/info/1", nil)
 	s.Require().Nil(err)
 
 	code, body, _, _ = s.request(req)
-	s.Equal(`{"info":{"handler":"github.com/goravel/gin.(*ContextRequestSuite).TestInfo.func1","method":"HEAD","name":"test-info-get","path":"/info/{id}"}}`, body)
+	s.Equal(`{"info":{"handler":"github.com/gradii/gin.(*ContextRequestSuite).TestInfo.func1","method":"HEAD","name":"test-info-get","path":"/info/{id}"}}`, body)
 	s.Equal(http.StatusOK, code)
 
 	req, err = http.NewRequest("POST", "/info/1", nil)
 	s.Require().Nil(err)
 
 	code, body, _, _ = s.request(req)
-	s.Equal(`{"info":{"handler":"github.com/goravel/gin.(*ContextRequestSuite).TestInfo.func2","method":"POST","name":"test-info-post","path":"/info/{id}"}}`, body)
+	s.Equal(`{"info":{"handler":"github.com/gradii/gin.(*ContextRequestSuite).TestInfo.func2","method":"POST","name":"test-info-post","path":"/info/{id}"}}`, body)
 	s.Equal(http.StatusOK, code)
 
 	req, err = http.NewRequest("GET", "/info/any/1", nil)
 	s.Require().Nil(err)
 
 	code, body, _, _ = s.request(req)
-	s.Equal(`{"info":{"handler":"github.com/goravel/gin.(*ContextRequestSuite).TestInfo.func3","method":"GET","name":"test-info-any","path":"/info/any/{id}"}}`, body)
+	s.Equal(`{"info":{"handler":"github.com/gradii/gin.(*ContextRequestSuite).TestInfo.func3","method":"GET","name":"test-info-any","path":"/info/any/{id}"}}`, body)
 	s.Equal(http.StatusOK, code)
 
 	req, err = http.NewRequest("POST", "/info/resource/1", nil)
 	s.Require().Nil(err)
 
 	code, body, _, _ = s.request(req)
-	s.Equal(`{"info":{"handler":"github.com/goravel/gin.(*ContextRequestSuite).TestInfo.func4","method":"POST","name":"test-info-resource","path":"/info/resource/{id}"}}`, body)
+	s.Equal(`{"info":{"handler":"github.com/gradii/gin.(*ContextRequestSuite).TestInfo.func4","method":"POST","name":"test-info-resource","path":"/info/resource/{id}"}}`, body)
 	s.Equal(http.StatusOK, code)
 }
 

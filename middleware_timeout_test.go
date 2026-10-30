@@ -8,9 +8,9 @@ import (
 	"testing"
 	"time"
 
-	contractshttp "github.com/goravel/framework/contracts/http"
-	mocksconfig "github.com/goravel/framework/mocks/config"
-	mockslog "github.com/goravel/framework/mocks/log"
+	contractshttp "github.com/gradii/framework/contracts/http"
+	mocksconfig "github.com/gradii/framework/mocks/config"
+	mockslog "github.com/gradii/framework/mocks/log"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"

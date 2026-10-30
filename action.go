@@ -1,8 +1,8 @@
 package gin
 
 import (
-	contractshttp "github.com/goravel/framework/contracts/http"
-	contractsroute "github.com/goravel/framework/contracts/route"
+	contractshttp "github.com/gradii/framework/contracts/http"
+	contractsroute "github.com/gradii/framework/contracts/route"
 )
 
 type Action struct {

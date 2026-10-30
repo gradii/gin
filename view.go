@@ -6,8 +6,8 @@ import (
 	"reflect"
 
 	"github.com/gin-gonic/gin"
-	contractshttp "github.com/goravel/framework/contracts/http"
-	contractsession "github.com/goravel/framework/contracts/session"
+	contractshttp "github.com/gradii/framework/contracts/http"
+	contractsession "github.com/gradii/framework/contracts/session"
 )
 
 type View struct {

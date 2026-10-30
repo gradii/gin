@@ -3,7 +3,7 @@ package gin
 import (
 	"net/http"
 
-	contractshttp "github.com/goravel/framework/contracts/http"
+	contractshttp "github.com/gradii/framework/contracts/http"
 	"github.com/unrolled/secure"
 )
 

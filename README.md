@@ -1,21 +1,22 @@
 # Gin
 
-[![Doc](https://pkg.go.dev/badge/github.com/goravel/gin)](https://pkg.go.dev/github.com/goravel/gin)
-[![Go](https://img.shields.io/github/go-mod/go-version/goravel/gin)](https://go.dev/)
-[![Release](https://img.shields.io/github/release/goravel/gin.svg)](https://github.com/goravel/gin/releases)
-[![Test](https://github.com/goravel/gin/actions/workflows/test.yml/badge.svg)](https://github.com/goravel/gin/actions)
-[![Report Card](https://goreportcard.com/badge/github.com/goravel/gin)](https://goreportcard.com/report/github.com/goravel/gin)
-[![Codecov](https://codecov.io/gh/goravel/gin/branch/master/graph/badge.svg)](https://codecov.io/gh/goravel/gin)
-![License](https://img.shields.io/github/license/goravel/gin)
+[![Doc](https://pkg.go.dev/badge/github.com/gradii/gin)](https://pkg.go.dev/github.com/gradii/gin)
+[![Go](https://img.shields.io/github/go-mod/go-version/gradii/gin)](https://go.dev/)
+[![Release](https://img.shields.io/github/release/gradii/gin.svg)](https://github.com/gradii/gin/releases)
+[![Test](https://github.com/gradii/gin/actions/workflows/test.yml/badge.svg)](https://github.com/gradii/gin/actions)
+[![Report Card](https://goreportcard.com/badge/github.com/gradii/gin)](https://goreportcard.com/report/github.com/gradii/gin)
+[![Codecov](https://codecov.io/gh/gradii/gin/branch/main/graph/badge.svg)](https://codecov.io/gh/gradii/gin)
+![License](https://img.shields.io/github/license/gradii/gin)
 
-Gin http driver for Goravel.
+Gin HTTP driver for `github.com/gradii/framework`, a fork of
+[goravel/gin](https://github.com/goravel/gin) published as `github.com/gradii/gin`.
 
 ## Install
 
 Run the command below in your project to install the package automatically:
 
 ```
-./artisan package:install github.com/goravel/gin
+./artisan package:install github.com/gradii/gin
 ```
 
 Or check [the setup file](./setup/setup.go) to install the package manually.
@@ -36,7 +37,7 @@ import (
     "html/template"
 
     "github.com/gin-gonic/gin/render"
-    "github.com/goravel/gin"
+    "github.com/gradii/gin"
 )
 
 "template": func() (render.HTMLRender, error) {

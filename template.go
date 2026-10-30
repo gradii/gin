@@ -5,8 +5,8 @@ import (
 	"maps"
 
 	"github.com/gin-gonic/gin/render"
-	contractsview "github.com/goravel/framework/contracts/view"
-	frameworkview "github.com/goravel/framework/view"
+	contractsview "github.com/gradii/framework/contracts/view"
+	frameworkview "github.com/gradii/framework/view"
 )
 
 type Delims struct {

@@ -6,8 +6,8 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	contractshttp "github.com/goravel/framework/contracts/http"
-	mocksconfig "github.com/goravel/framework/mocks/config"
+	contractshttp "github.com/gradii/framework/contracts/http"
+	mocksconfig "github.com/gradii/framework/mocks/config"
 	"github.com/stretchr/testify/assert"
 )
 

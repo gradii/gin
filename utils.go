@@ -7,7 +7,7 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
-	httpcontract "github.com/goravel/framework/contracts/http"
+	httpcontract "github.com/gradii/framework/contracts/http"
 )
 
 func pathToGinPath(relativePath string) string {
